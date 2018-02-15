@@ -1,0 +1,49 @@
+h1 {
+  font-weight: 100;
+}
+.text-white {
+  color: #fff;
+}
+.btn-btn {
+  text-decoration: none;
+  border: 1px solid #16a085;
+  padding: 10px;
+  display: block;
+  width: 200px;
+  text-align: center;
+  color: #FFFF66;
+  background-color: #FFCC33;
+  color: #000;
+}
+.btn-btn:hover {
+  background-color: #0e6b59;
+  border-color: #0e6b59;
+}
+.btn-solid {
+  box-shadow: 0 6px 0 #29b664;
+  position: relative;
+  top: 0;
+  -moz-transition: 100ms all linear;
+  -o-transition: 100ms all linear;
+  transition: 100ms all linear;
+}
+.btn-solid:hover {
+  box-shadow: none;
+  top: 6px;
+}
+.top-hero-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#05FBFF, #1D62F0 ) fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.top-hero-container {
+  padding-top: 220px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+}
