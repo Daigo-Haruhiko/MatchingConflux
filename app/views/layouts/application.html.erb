@@ -10,6 +10,55 @@
 
   <body>
 
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+        <%= link_to "MatchingConflux", root_path, class: 'navbar-brand'  %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to '#' do  %>
+            <%= image_tag 'icons/topic.png' %>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to '/users/sign_out' do  %>
+            <%= image_tag 'icons/signout.png' %>
+            <% end %>
+          </li>
+
+          <% elsif company_signed_in? %>
+          <li>
+            <%= link_to '#' do  %>
+            <%= image_tag 'icons/topic.png' %>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to '/companies/sign_out', method: :delete do  %>
+            <%= image_tag 'icons/signout.png' %>
+            <% end %>
+          </li>
+
+        <% else %>
+        <li>
+          <%= link_to '/users/sign_up' do %>
+          <%= image_tag 'icons/user.png' %>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to 'companies/sign_up' do %>
+          <%= image_tag 'icons/company.png' %>
+          <% end %>
+        </li>
+
+        <% end %>
+        </ul>
+      </div>
+    </nav>
+
     <% if flash[:notice] %>
     <div class="alert alert-success">
       <%= flash[:notice] %>
