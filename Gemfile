@@ -59,3 +59,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
 end
 gem 'bootstrap-sass'
+gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'devise-bootstrap-views'
