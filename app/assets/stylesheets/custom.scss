@@ -1,3 +1,6 @@
+body {
+  padding-top: 50px;
+}
 h1, h2 {
   font-weight: 100;
 }
@@ -11,8 +14,8 @@ h1, h2 {
   display: block;
   width: 200px;
   text-align: center;
-  color: #FFFF66;
-  background-color: #FFCC33;
+  color: #ffff66;
+  background-color: #ffff00;
   color: #000;
 }
 .btn-btn:hover {
@@ -61,4 +64,19 @@ h1, h2 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+.navbar-default {
+  background-color: #ffff00;
+}
+.navbar-transparent {
+  margin-bottom: 0px;
+
+  img {
+    height: 40px;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+    margin-top: 15px;
+  }
 }
