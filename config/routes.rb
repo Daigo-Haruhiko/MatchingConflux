@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'topics/new'
+
   root 'pages#index'
 
   devise_for :users, module: :users
@@ -10,5 +12,7 @@ Rails.application.routes.draw do
   devise_scope :company do
    get '/companies/sign_out' => 'companies/sessions#destroy'
  end
- 
+
+ resources 'topics'
+
 end

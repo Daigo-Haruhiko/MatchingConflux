@@ -1,0 +1,40 @@
+<div class="topic-index-wrapper">
+  <div class="container">
+    <% @topics.each do |topic| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="topic-index-single">
+          <h2 class="topic-author">
+            <%= topic.user.name %>
+          </h2>
+          <hr>
+          <p class="topic-title">
+            年収
+          </p>
+          <p class="topic-text">
+            <%= topic.salary %>
+          </p>
+
+          <p class="topic-title">
+            連絡先
+          </p>
+          <p class="topic-text">
+            <%= topic.phone %>
+          </p>
+
+          <p class="topic-title">
+            概要
+          </p>
+          <p class="topic-text">
+            <%= topic.description %>
+          </p>
+
+          <%= image_tag topic.image.url %>
+          <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
+           <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
