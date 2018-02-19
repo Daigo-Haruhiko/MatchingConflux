@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/new'
+
   get 'topics/new'
 
   root 'pages#index'
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
  end
 
  resources 'topics'
+ resources 'profiles'
 
 end
