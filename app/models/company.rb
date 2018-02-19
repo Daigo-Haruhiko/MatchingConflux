@@ -6,7 +6,7 @@ class Company < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :image, AvatarUploader
 
   has_many :profiles
 end
