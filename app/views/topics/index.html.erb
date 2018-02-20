@@ -32,6 +32,9 @@
           <p class="topic-title">
             <%= link_to "編集", edit_topic_path(topic.id), :style=>"color:yellow;" %>
           </p>
+          <p class="topic-title">
+            <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: "本当に削除しますか？"}, :style=>"color:red;" %>
+          </p>
 
           <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
