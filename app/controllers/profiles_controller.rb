@@ -27,6 +27,12 @@ class ProfilesController < ApplicationController
     redirect_to profiles_path, notice: '更新しました'
   end
 
+  def destroy
+    @profile = find_profile_by_id
+    @profile.destroy
+    redirect_to profiles_path, alert: '削除しました'
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:salary, :phone, :image, :description)

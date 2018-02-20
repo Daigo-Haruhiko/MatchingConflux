@@ -27,6 +27,12 @@ class TopicsController < ApplicationController
     redirect_to topics_path, notice: '更新しました'
   end
 
+  def destroy
+    @topic = find_topic_by_id
+    @topic.destroy
+    redirect_to topics_path, alert: '削除しました'
+  end 
+
   private
   def topic_params
     params.require(:topic).permit(:salary, :phone, :image, :description)
