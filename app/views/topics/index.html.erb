@@ -28,8 +28,11 @@
           <p class="topic-text">
             <%= topic.description %>
           </p>
-
           <%= image_tag topic.image.url %>
+          <p class="topic-title">
+            <%= link_to "編集", edit_topic_path(topic.id), :style=>"color:yellow;" %>
+          </p>
+
           <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
         </div>
