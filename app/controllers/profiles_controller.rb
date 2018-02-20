@@ -17,9 +17,23 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
+  def edit
+    @profile = find_profile_by_id
+  end
+
+  def update
+    @profile = find_profile_by_id
+    @profile.update(profile_params)
+    redirect_to profiles_path, notice: '更新しました'
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:salary, :phone, :image, :description)
+  end
+
+  def find_profile_by_id
+    Profile.find(params[:id])
   end
 
 end

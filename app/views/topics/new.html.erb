@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">情報投稿フォーム</h1>
-        <%= form_for @topic do |f| %>
+        <!-- <%= form_for @topic do |f| %>
 
         <div class="form-group">
           <%= f.label :salary %>
@@ -23,7 +23,8 @@
         </div>
 
         <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
-        <% end %>
+        <% end %> -->
+        <%= render "form" %>
       </div>
     </div>
   </div>

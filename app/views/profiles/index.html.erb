@@ -28,8 +28,11 @@
         <p class="profile-text">
           <%= profile.description %>
         </p>
-
         <%= image_tag profile.image.url %>
+        <p class="profile-title">
+          <%= link_to "編集", edit_profile_path(profile.id), :style=>"color:yellow;" %>
+        </p> 
+
         <%= image_tag 'icons/heart.png', class: 'profile-index-icon' %>
          <%= image_tag 'icons/comment.png', class: 'profile-index-icon' %>
       </div>
