@@ -29,9 +29,11 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = find_topic_by_id
+    if topic.user_id == current_user.id
     @topic.destroy
-    redirect_to topics_path, alert: '削除しました'
   end 
+    redirect_to topics_path, alert: '削除しました'
+  end
 
   private
   def topic_params

@@ -33,7 +33,9 @@
           <%= link_to "編集", edit_profile_path(profile.id), :style=>"color:yellow;" %>
         </p>
         <p class="profile-title">
+          <% if company_signed_in? && current_company.id == profile.company_id %>
           <%= link_to "削除", profile_path(profile.id), method: :delete, data:{confirm: "本当に削除しますか？"}, :style=>"color:red;" %>
+          <% end %>
         </p>
 
         <%= image_tag 'icons/heart.png', class: 'profile-index-icon' %>
