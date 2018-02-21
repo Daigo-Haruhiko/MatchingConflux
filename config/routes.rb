@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
  resources 'topics'
  resources 'profiles'
+ resources 'topic_favorites', :only => [:create, :index, :destroy]
+ resources 'profile_favorites', :only => [:create, :index, :destroy]
 
 end

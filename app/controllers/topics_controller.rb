@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:topic_favorite_users)
   end
 
   def edit
@@ -31,7 +31,7 @@ class TopicsController < ApplicationController
     @topic = find_topic_by_id
     if topic.user_id == current_user.id
     @topic.destroy
-  end 
+  end
     redirect_to topics_path, alert: '削除しました'
   end
 

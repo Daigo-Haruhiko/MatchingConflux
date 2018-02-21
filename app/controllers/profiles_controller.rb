@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.includes(:profile_favorite_companies)
   end
 
   def edit
@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
     @profile = find_profile_by_id
     if profile.company_id == current_company.id
     @profile.destroy
-  end 
+  end
     redirect_to profiles_path, alert: '削除しました'
   end
 

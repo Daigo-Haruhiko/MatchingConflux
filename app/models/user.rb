@@ -9,5 +9,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :topics
-  
+  has_many :topic_favorites, dependent: :destroy
+  has_many :topic_favorite_topics, through: :topic_favorites, source: 'topic'
+
 end

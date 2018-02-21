@@ -1,6 +1,6 @@
 <div class="topic-index-wrapper">
   <div class="container">
-    <% @topics.each do |topic| %>
+    <% @topic_favorite_topics.each do |topic| %>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="topic-index-single">
@@ -37,12 +37,11 @@
             <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: "本当に削除しますか？"}, :style=>"color:red;" %>
             <% end %>
           </p>
+          <p class="topic-title">
+            <%= link_to "お気に入りから削除する", topic_favorite_path(topic, topic_id: topic.id), method: :delete, :style=>"color:red;" %>
+          </p>
 
-          <% if !topic.topic_favorite_users.include?(current_user) %>
-          <%= link_to topic_favorites_path(topic_id: topic.id), method: :post do %>
-          <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
-          <% end %>
-          <% end %>
+
            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
         </div>
       </div>
