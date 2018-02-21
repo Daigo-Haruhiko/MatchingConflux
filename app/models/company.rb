@@ -9,4 +9,6 @@ class Company < ApplicationRecord
   mount_uploader :image, AvatarUploader
 
   has_many :profiles
+  has_many :profile_favorites, dependent: :destroy
+  has_many :profile_favorite_profiles, through: :profile_favorites, source: 'profile'
 end
