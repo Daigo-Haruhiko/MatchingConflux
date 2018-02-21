@@ -11,4 +11,6 @@ class Company < ApplicationRecord
   has_many :profiles
   has_many :profile_favorites, dependent: :destroy
   has_many :profile_favorite_profiles, through: :profile_favorites, source: 'profile'
+
+  has_many :profile_comments
 end

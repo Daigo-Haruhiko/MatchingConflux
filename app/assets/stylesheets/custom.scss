@@ -1,7 +1,7 @@
 body {
   padding-top: 50px;
 }
-h1, h2 {
+h1, h2, h3 {
   font-weight: 100;
 }
 .text-white {
@@ -182,5 +182,18 @@ h1, h2 {
       height: 30px;
       margin-left: 20px;
     }
+  }
+}
+.comment-hero-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#05FBFF, #1D62F0 ) fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .form-group {
+    margin-bottom: 20px;
   }
 }
