@@ -30,7 +30,9 @@
           </p>
           <%= image_tag topic.image.url %>
           <p class="topic-title">
+            <% if user_signed_in? && current_user.id == topic.user_id %>
             <%= link_to "編集", edit_topic_path(topic.id), :style=>"color:yellow;" %>
+            <% end %>
           </p>
           <p class="topic-title">
             <% if user_signed_in? && current_user.id == topic.user_id %>

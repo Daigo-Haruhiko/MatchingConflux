@@ -30,7 +30,9 @@
           </p>
           <%= image_tag topic.image.url %>
           <p class="topic-title">
+            <% if user_signed_in? && current_user.id == topic.user_id %>
             <%= link_to "編集", edit_topic_path(topic.id), :style=>"color:yellow;" %>
+            <% end %>
           </p>
           <p class="topic-title">
             <% if user_signed_in? && current_user.id == topic.user_id %>
@@ -43,7 +45,28 @@
           <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
           <% end %>
           <% end %>
+
+          <%= link_to new_topic_comment_path(topic_id: topic.id) do %>
            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+          <% end %>
+
+          <h3 class="topic-title">
+            コメント
+          </h3>
+          <% topic.topic_comments.each do |comment| %>
+          <p class="topic-title">
+            <%= comment.user.name %>
+          </p>
+          <p class="topic-text">
+            <%= comment.comment %>
+          </p>
+          <p class="topic-text">
+            <% if user_signed_in? && current_user.id == comment.user_id %>
+            <%= link_to "削除", topic_comment_path(topic, topic_id: topic.id), method: :delete, :style=>"color:red;" %>
+            <% end %>
+          </p>
+          <% end %>
+
         </div>
       </div>
     </div>

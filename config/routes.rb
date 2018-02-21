@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'profile_comments/new'
+
+  get 'topic_comments/new'
+
   get 'profiles/new'
 
   get 'topics/new'
@@ -19,5 +23,7 @@ Rails.application.routes.draw do
  resources 'profiles'
  resources 'topic_favorites', :only => [:create, :index, :destroy]
  resources 'profile_favorites', :only => [:create, :index, :destroy]
+ resources 'topic_comments', :only => [:new, :create, :destroy]
+ resources 'profile_comments', :only => [:new, :create, :destroy]
 
 end

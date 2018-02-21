@@ -10,4 +10,6 @@ class Topic < ApplicationRecord
   belongs_to :user
   has_many :topic_favorites, dependent: :destroy
   has_many :topic_favorite_users, through: :topic_favorites, source: 'user'
+
+  has_many :topic_comments
 end

@@ -30,7 +30,9 @@
         </p>
         <%= image_tag profile.image.url %>
         <p class="profile-title">
+          <% if company_signed_in? && current_company.id == profile.company_id %>
           <%= link_to "編集", edit_profile_path(profile.id), :style=>"color:yellow;" %>
+          <% end %>
         </p>
         <p class="profile-title">
           <% if company_signed_in? && current_company.id == profile.company_id %>
@@ -39,7 +41,7 @@
         </p>
         <p class="profile-title">
           <%= link_to "お気に入りから削除する", profile_favorite_path(profile, profile_id: profile.id), method: :delete, :style=>"color:red;" %>
-        </p> 
+        </p>
 
          <%= image_tag 'icons/comment.png', class: 'profile-index-icon' %>
       </div>
