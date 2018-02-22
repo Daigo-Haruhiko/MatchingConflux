@@ -8,5 +8,12 @@ class ApplicationController < ActionController::Base
   # def configure_permitted_parameters
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :age])
   # end
+  def after_sign_in_path_for(resource)
+    if user_signed_in?
+    user_url(resource)
+  elsif company_signed_in?
+    company_url(resource)
+    end
+  end
 
 end
