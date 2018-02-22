@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'companies/index'
+
+  get 'companies/show'
+
+  get 'users/index'
+
+  get 'users/show'
+
   get 'profile_comments/new'
 
   get 'topic_comments/new'
@@ -13,11 +22,13 @@ Rails.application.routes.draw do
   devise_scope :user do
    get '/users/sign_out' => 'users/sessions#destroy'
  end
+  resources 'users', :only => [:index, :show]
 
   devise_for :companies, module: :companies
   devise_scope :company do
    get '/companies/sign_out' => 'companies/sessions#destroy'
  end
+ resources 'companies', :only => [:index, :show]
 
  resources 'topics'
  resources 'profiles'

@@ -1,0 +1,11 @@
+<div class="top-hero-wrapper text-center">
+  <h1 class="text-white">My page (<%= @company.name %>)</h1>
+    <p class="text-white text-title">E-mail:<%= @company.email %></p>
+    <%= link_to "学生投稿一覧", topics_path, class: 'text-title text-black' %>
+    <br>
+    <%= link_to "学生投稿お気に入り一覧", topic_favorites_path, class: 'text-title text-black' %>
+    <br>
+    <%= link_to "企業投稿一覧", profiles_path, class: 'text-title text-black' %>
+    <br>
+    <%= link_to "企業投稿お気に入り一覧", profile_favorites_path, class: 'text-title text-black' %>
+</div>
