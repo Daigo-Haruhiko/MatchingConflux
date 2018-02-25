@@ -1,6 +1,12 @@
 <div class="top-hero-wrapper text-center">
   <h1 class="text-white">My page (<%= @company.name %>)</h1>
     <p class="text-white text-title">E-mail:<%= @company.email %></p>
+    <% if @company.avatar.url %>
+    <%= image_tag @company.avatar.url %>
+    <% else %>
+    <%= image_tag 'icons/default.png' %>
+    <% end %>
+    <br>
     <%= link_to "学生投稿一覧", topics_path, class: 'text-title text-black' %>
     <br>
     <%= link_to "学生投稿お気に入り一覧", topic_favorites_path, class: 'text-title text-black' %>

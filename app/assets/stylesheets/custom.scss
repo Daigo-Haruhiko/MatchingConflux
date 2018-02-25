@@ -46,6 +46,10 @@ h1, h2, h3 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  img {
+    width: 100px;
+    height: 100px;
+  }
 }
 .top-hero-container {
   padding-top: 220px;
@@ -121,6 +125,10 @@ h1, h2, h3 {
     .topic-author {
       padding-right: 20px;
       padding-left: 20px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
     }
     .topic-title {
       font-size: 20px;
@@ -167,6 +175,10 @@ h1, h2, h3 {
     .profile-author {
       padding-right: 20px;
       padding-left: 20px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
     }
     .profile-title {
       font-size: 20px;
