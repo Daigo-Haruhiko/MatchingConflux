@@ -6,6 +6,11 @@
       <div class="profile-index-single">
         <h2 class="profile-author">
           <%= profile.company.name %>
+          <% if profile.company.avatar.url %>
+          <%= image_tag profile.company.avatar.url %>
+          <% else %>
+          <%= image_tag 'icons/default.png' %>
+          <% end %>
         </h2>
         <hr>
         <p class="profile-title">

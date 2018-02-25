@@ -6,6 +6,11 @@
         <div class="topic-index-single">
           <h2 class="topic-author">
             <%= topic.user.name %>
+            <% if topic.user.avatar.url %>
+            <%= image_tag topic.user.avatar.url %>
+            <% else %>
+            <%= image_tag 'icons/default.png' %>
+            <% end %>
           </h2>
           <hr>
           <p class="topic-title">
