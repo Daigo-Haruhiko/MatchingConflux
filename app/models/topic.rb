@@ -8,8 +8,10 @@ class Topic < ApplicationRecord
   mount_uploader :image, AvatarUploader
 
   belongs_to :user
-  has_many :topic_favorites, dependent: :destroy
+  belongs_to :company
+  has_many :topic_favorites, dependent: :destroy, validate: :false
   has_many :topic_favorite_users, through: :topic_favorites, source: 'user'
+  has_many :topic_favorite_companies, through: :topic_favorites, source: 'company'
 
   has_many :topic_comments
 end

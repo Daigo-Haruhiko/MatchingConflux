@@ -5,6 +5,11 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="topic-index-single">
           <h2 class="topic-author">
+            <% if topic.user.avatar.url %>
+            <%= image_tag topic.user.avatar.url %>
+            <% else %>
+            <%= image_tag 'icons/default.png' %>
+            <% end %>
             <%= topic.user.name %>
           </h2>
           <hr>
@@ -42,9 +47,6 @@
           <p class="topic-title">
             <%= link_to "お気に入りから削除する", topic_favorite_path(topic, topic_id: topic.id), method: :delete, :style=>"color:red;" %>
           </p>
-
-
-           <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
         </div>
       </div>
     </div>
