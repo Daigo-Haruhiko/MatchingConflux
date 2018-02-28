@@ -12,8 +12,13 @@
 
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
+        <% if user_signed_in? %>
+        <%= link_to "MatchingConflux", "/users/#{current_user.id}", class: 'navbar-brand'  %>
+        <% elsif company_signed_in? %>
+        <%= link_to "MatchingConflux", "/companies/#{current_company.id}", class: 'navbar-brand'  %>
+        <% else %>
         <%= link_to "MatchingConflux", root_path, class: 'navbar-brand'  %>
-
+        <% end %>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
           <li>

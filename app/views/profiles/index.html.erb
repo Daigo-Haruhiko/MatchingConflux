@@ -5,12 +5,12 @@
     <div class="col-md-6 col-md-offset-3">
       <div class="profile-index-single">
         <h2 class="profile-author">
-          <%= profile.company.name %>
           <% if profile.company.avatar.url %>
           <%= image_tag profile.company.avatar.url %>
           <% else %>
           <%= image_tag 'icons/default.png' %>
           <% end %>
+          <%= profile.company.name %>
         </h2>
         <hr>
         <p class="profile-title">
@@ -45,7 +45,13 @@
           <% end %>
         </p>
 
-        <% if !profile.profile_favorite_companies.include?(current_company) %>
+        <% if company_signed_in? && !profile.profile_favorite_companies.include?(current_company) %>
+        <%= link_to profile_favorites_path(profile_id: profile.id), method: :post do %>
+        <%= image_tag 'icons/heart.png', class: 'profile-index-icon' %>
+        <% end %>
+        <% end %>
+
+        <% if user_signed_in? && !profile.profile_favorite_users.include?(current_user) %>
         <%= link_to profile_favorites_path(profile_id: profile.id), method: :post do %>
         <%= image_tag 'icons/heart.png', class: 'profile-index-icon' %>
         <% end %>
@@ -60,14 +66,22 @@
          </h3>
          <% profile.profile_comments.each do |comment| %>
          <p class="profile-title">
-           <%= comment.company.name %>
-         </P>
+           <% if comment.company_id == nil %>
+           <%= comment.user.name %>（学生）
+           <% elsif comment.user_id == nil %>
+           <%= comment.company.name %>（企業）
+           <% end %>
+         </p>
          <p class="profile-text">
            <%= comment.comment %>
          </p>
+         <p class="profile-text">
          <% if company_signed_in? && current_company.id == comment.company_id %>
          <%= link_to "削除", profile_comment_path(profile, profile_id: profile.id), method: :delete, :style=>"color:red;" %>
+         <% elsif user_signed_in? && current_user.id == comment.user_id %>
+         <%= link_to "削除", profile_comment_path(profile, profile_id: profile.id), method: :delete, :style=>"color:red;" %>
          <% end %>
+         </p>
          <% end %>
 
       </div>

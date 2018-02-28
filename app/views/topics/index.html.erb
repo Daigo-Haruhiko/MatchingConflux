@@ -5,12 +5,12 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="topic-index-single">
           <h2 class="topic-author">
-            <%= topic.user.name %>
             <% if topic.user.avatar.url %>
             <%= image_tag topic.user.avatar.url %>
             <% else %>
             <%= image_tag 'icons/default.png' %>
             <% end %>
+            <%= topic.user.name %>
           </h2>
           <hr>
           <p class="topic-title">
@@ -45,7 +45,13 @@
             <% end %>
           </p>
 
-          <% if !topic.topic_favorite_users.include?(current_user) %>
+          <% if user_signed_in? && !topic.topic_favorite_users.include?(current_user) %>
+          <%= link_to topic_favorites_path(topic_id: topic.id), method: :post do %>
+          <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
+          <% end %>
+          <% end %>
+
+          <% if company_signed_in? && !topic.topic_favorite_companies.include?(current_company) %>
           <%= link_to topic_favorites_path(topic_id: topic.id), method: :post do %>
           <%= image_tag 'icons/heart.png', class: 'topic-index-icon' %>
           <% end %>
@@ -60,13 +66,19 @@
           </h3>
           <% topic.topic_comments.each do |comment| %>
           <p class="topic-title">
-            <%= comment.user.name %>
+            <% if comment.company_id == nil %>
+            <%= comment.user.name %>（学生）
+            <% elsif comment.user_id == nil %>
+            <%= comment.company.name %>（企業）
+            <% end %>
           </p>
           <p class="topic-text">
             <%= comment.comment %>
           </p>
           <p class="topic-text">
             <% if user_signed_in? && current_user.id == comment.user_id %>
+            <%= link_to "削除", topic_comment_path(topic, topic_id: topic.id), method: :delete, :style=>"color:red;" %>
+            <% elsif company_signed_in? && current_company.id == comment.company_id %>
             <%= link_to "削除", topic_comment_path(topic, topic_id: topic.id), method: :delete, :style=>"color:red;" %>
             <% end %>
           </p>
