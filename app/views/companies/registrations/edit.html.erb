@@ -1,7 +1,8 @@
-<div class="users-hero-wrapper">
+<div class="users-hero-wrapper text-white">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 users-new-container">
+        <div class="register-card">
 <h2>編集 <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -52,9 +53,9 @@
 
 <h3>アカウントの削除はこちら</h3>
 
-<p>Unhappy? <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete, class: 'btn btn-black' %></p>
 
-<%= link_to "Back", :back %>
+</div>
 </div>
 </div>
 </div>

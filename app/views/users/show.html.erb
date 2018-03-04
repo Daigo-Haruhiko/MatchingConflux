@@ -1,18 +1,21 @@
 <div class="top-hero-wrapper text-center">
   <h1 class="text-white">My page (<%= @user.name %>)</h1>
+  <% if @user.avatar.url %>
+  <%= image_tag @user.avatar.url, class: 'image-circle' %>
+  <% else %>
+  <%= image_tag 'icons/default.png', class: 'image-circle' %>
+  <% end %>
+  <br> 
     <p class="text-white text-title">E-mail:<%= @user.email %></p>
     <p class="text-white text-title">Age:<%= @user.age %></p>
-    <% if @user.avatar.url %>
-    <%= image_tag @user.avatar.url %>
-    <% else %>
-    <%= image_tag 'icons/default.png' %>
-    <% end %>
     <br>
-    <%= link_to "学生投稿一覧", topics_path, class: 'text-title text-black' %>
+    <%= link_to "学生投稿お気に入り", topic_favorites_path, class: 'text-menu anime1' %>
     <br>
-    <%= link_to "学生投稿お気に入り一覧", topic_favorites_path, class: 'text-title text-black' %>
+    <%= link_to "学生投稿一覧", topics_path, class: 'text-menu anime2' %>
     <br>
-    <%= link_to "企業投稿一覧", profiles_path, class: 'text-title text-black' %>
+    <%= link_to "ユーザー情報　編集", edit_user_registration_path, class: 'text-menu anime3' %>
     <br>
-    <%= link_to "企業投稿お気に入り一覧", profile_favorites_path, class: 'text-title text-black' %>
+    <%= link_to "企業投稿一覧", profiles_path, class: 'text-menu anime4' %>
+    <br>
+    <%= link_to "企業投稿お気に入り", profile_favorites_path, class: 'text-menu anime5' %>
 </div>

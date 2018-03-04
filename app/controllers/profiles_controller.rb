@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile = find_profile_by_id
-    if profile.company_id == current_company.id
+    if @profile.company_id == current_company.id
     @profile.destroy
   end
     redirect_to profiles_path, alert: '削除しました'
