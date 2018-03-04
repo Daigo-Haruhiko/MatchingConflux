@@ -7,7 +7,7 @@ class Profile < ApplicationRecord
   mount_uploader :image, AvatarUploader
 
   belongs_to :company
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :profile_favorites, dependent: :destroy
   has_many :profile_favorite_companies, through: :profile_favorites, source: 'company'
   has_many :profile_favorite_users, through: :profile_favorites, source: 'user'
