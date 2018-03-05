@@ -2,11 +2,15 @@
 
 <div class="form-group">
   <%= f.label :salary %>
-  <%= f.text_field :salary, class: 'form-control' %>
+  <%= f.number_field :salary, class: 'form-control' %><i>万円</i>
 </div>
 <div class="form-group" >
   <%= f.label :phone %>
   <%= f.text_field :phone, class: 'form-control' %>
+</div>
+<div class="form-group" >
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= f.label :image %>
