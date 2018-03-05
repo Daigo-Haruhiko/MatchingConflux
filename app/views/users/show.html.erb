@@ -1,11 +1,17 @@
 <div class="top-hero-wrapper text-center">
+  <ul class="sample">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
   <h1 class="text-white">My page (<%= @user.name %>)</h1>
   <% if @user.avatar.url %>
   <%= image_tag @user.avatar.url, class: 'image-circle' %>
   <% else %>
   <%= image_tag 'icons/default.png', class: 'image-circle' %>
   <% end %>
-  <br> 
+  <br>
     <p class="text-white text-title">E-mail:<%= @user.email %></p>
     <p class="text-white text-title">Age:<%= @user.age %></p>
     <br>

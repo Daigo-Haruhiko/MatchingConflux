@@ -1,20 +1,26 @@
 <div class="top-hero-wrapper text-center">
+  <ul class="sample">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
   <div class="container top-hero-container">
     <h1 class="text-white">学生と企業をつなぐ新しい就活サービス</h1>
+    <br>
+    <br>
+    <br> 
     <div class="row">
       <div class="col-md-3">
         <%= link_to '学生新規登録', '/users/sign_up' , class: 'btn btn-block btn-btn btn-solid' %>
       </div>
-      <div class="col-md-3 col-md-offset-6">
+      <div class="col-md-3">
         <%= link_to '学生ログイン', '/users/sign_in', class: 'btn btn-block btn-btn btn-solid' %>
       </div>
-    </div>
-    <br>
-    <div class="row">
       <div class="col-md-3">
         <%= link_to '企業新規登録', '/companies/sign_up', class: 'btn btn-block btn-btn btn-solid' %>
       </div>
-      <div class="col-md-3 col-md-offset-6">
+      <div class="col-md-3">
         <%= link_to '企業ログイン', '/companies/sign_in', class: 'btn btn-block btn-btn btn-solid' %>
       </div>
     </div>
