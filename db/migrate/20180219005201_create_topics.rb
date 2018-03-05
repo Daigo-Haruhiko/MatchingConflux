@@ -4,7 +4,7 @@ class CreateTopics < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.string :image
       t.string :description
-      t.string :salary
+      t.integer :salary
       t.string :phone
 
       t.timestamps

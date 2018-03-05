@@ -37,7 +37,7 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:salary, :phone, :image, :description)
+    params.require(:topic).permit(:salary, :phone, :image, :description, :college, :address)
   end
 
   def find_topic_by_id
