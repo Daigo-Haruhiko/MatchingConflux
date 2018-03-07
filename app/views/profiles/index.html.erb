@@ -41,13 +41,14 @@
         <%= image_tag profile.image.url %>
         <p class="profile-title">
           <% if company_signed_in? && current_company.id == profile.company_id %>
-          <%= link_to "編集", edit_profile_path(profile.id), class: 'btn-common btn-edit text-white' %>
+          <%= link_to "編集", edit_profile_path(profile.id), class: 'bt-samp34' %>
           <% end %>
 
           <% if company_signed_in? && current_company.id == profile.company_id %>
-          <%= link_to "削除", profile_path(profile.id), method: :delete, data:{confirm: "本当に削除しますか？"}, class: 'btn-common btn-delete text-white' %>
+          <%= link_to "削除", profile_path(profile.id), method: :delete, data:{confirm: "本当に削除しますか？"}, class: 'bt-samp34 delete' %>
           <% end %>
-
+        </p>
+        <p class="profile-title">
         <% if company_signed_in? && !profile.profile_favorite_companies.include?(current_company) %>
         <%= link_to profile_favorites_path(profile_id: profile.id), method: :post do %>
         <%= image_tag 'icons/heart.png', class: 'profile-index-icon' %>
@@ -81,9 +82,9 @@
          </p>
          <p class="profile-text">
          <% if company_signed_in? && current_company.id == comment.company_id %>
-         <%= link_to "削除", profile_comment_path(profile, profile_id: profile.id), method: :delete, class: 'btn-common btn-delete text-white' %>
+         <%= link_to "削除", profile_comment_path(profile, profile_id: profile.id), method: :delete, class: 'bt-samp34 delete' %>
          <% elsif user_signed_in? && current_user.id == comment.user_id %>
-         <%= link_to "削除", profile_comment_path(profile, profile_id: profile.id), method: :delete, class: 'btn-common btn-delete text-white' %>
+         <%= link_to "削除", profile_comment_path(profile, profile_id: profile.id), method: :delete, class: 'bt-samp34 delete' %>
          <% end %>
          </p>
          <% end %>
