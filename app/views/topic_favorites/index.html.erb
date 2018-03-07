@@ -46,15 +46,7 @@
           </p>
           <%= image_tag topic.image.url %>
           <p class="topic-title">
-            <% if user_signed_in? && current_user.id == topic.user_id %>
-            <%= link_to "編集", edit_topic_path(topic.id), class: 'btn-common btn-edit text-white' %>
-            <% end %>
-
-            <% if user_signed_in? && current_user.id == topic.user_id %>
-            <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn-common btn-delete text-white' %>
-            <% end %>
-
-            <%= link_to "お気に入りから削除する", topic_favorite_path(topic, topic_id: topic.id), method: :delete, class: 'btn-common btn-delete text-white' %>
+            <%= link_to "お気に入り削除", topic_favorite_path(topic, topic_id: topic.id), method: :delete, class: 'bt-samp31 delete' %>
           </p>
           <p id="pageTop"><a href="#">トップへ</a></p>
         </div>

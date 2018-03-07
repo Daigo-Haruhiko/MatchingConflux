@@ -40,15 +40,7 @@
         </p>
         <%= image_tag profile.image.url %>
         <p class="profile-title">
-          <% if company_signed_in? && current_company.id == profile.company_id %>
-          <%= link_to "編集", edit_profile_path(profile.id), class: 'btn-common btn-edit text-white' %>
-          <% end %>
-
-          <% if company_signed_in? && current_company.id == profile.company_id %>
-          <%= link_to "削除", profile_path(profile.id), method: :delete, data:{confirm: "本当に削除しますか？"}, class: 'btn-common btn-delete text-white' %>
-          <% end %>
-
-          <%= link_to "お気に入りから削除する", profile_favorite_path(profile, profile_id: profile.id), method: :delete, class: 'btn-common btn-delete text-white' %>
+          <%= link_to "お気に入り削除", profile_favorite_path(profile, profile_id: profile.id), method: :delete, class: 'bt-samp31 delete' %>
         </p>
         <p id="pageTop"><a href="#">トップへ</a></p>
       </div>
