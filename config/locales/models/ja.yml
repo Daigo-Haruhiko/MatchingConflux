@@ -1,0 +1,42 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      company: 企業
+      topic: ユーザー投稿
+      profile: 企業投稿
+      profile_comment: コメント
+      topic_comment: コメント
+    attributes:
+     user:
+      name: 名前
+      password: パスワード
+      password_confirmation: パスワード確認
+      email: メールアドレス
+      age: 年齢
+      avatar: アイコン
+     company:
+      name: 名前
+      password: パスワード
+      password_confirmation: パスワード確認
+      current_password: 現在のパスワード
+      email: メールアドレス
+      age: 年齢
+      avatar: アイコン
+     topic:
+      salary: 希望給料
+      phone: 携帯電話番号
+      college: 出身大学
+      image: 画像
+      address: 住所
+      description: 概要
+     profile:
+      salary: 提示給料
+      phone: 携帯電話番号
+      image: 画像
+      address: 住所
+      description: 概要
+     profile_comment:
+      comment: コメント
+     topic_comment:
+      comment: コメント
