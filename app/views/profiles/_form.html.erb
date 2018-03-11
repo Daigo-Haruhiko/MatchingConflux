@@ -1,16 +1,16 @@
 <%= form_for @profile do |f| %>
 
-<div class="form-group">
+<div class="form-group2">
   <%= f.label :salary %>
-  <%= f.number_field :salary, class: 'form-control' %><i>万円</i>
+  <%= f.number_field :salary,:placeholder => "100", class: 'form-control2' %><i>万円</i>
 </div>
 <div class="form-group" >
   <%= f.label :phone %>
-  <%= f.text_field :phone, class: 'form-control' %>
+  <%= f.text_field :phone,:placeholder => "0311111111 or 09011111111", class: 'form-control' %>
 </div>
 <div class="form-group" >
   <%= f.label :address %>
-  <%= f.text_field :address, class: 'form-control' %>
+  <%= f.text_field :address,:placeholder => "東京都新宿区１−１−１", class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= f.label :image %>
@@ -18,7 +18,7 @@
 </div>
 <div class="form-group">
   <%= f.label :description %>
-  <%= f.text_area :description, class: 'form-control' %>
+  <%= f.text_area :description,:placeholder => "英検二級以上必須、普通自動車免許（AT）必須  etc...", class: 'form-control' %>
 </div>
 
 <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
