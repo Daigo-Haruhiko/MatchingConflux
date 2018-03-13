@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rooms/show'
+
   get 'companies/index'
 
   get 'companies/show'
