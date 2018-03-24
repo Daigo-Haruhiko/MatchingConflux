@@ -1,18 +1,23 @@
-App.room = App.cable.subscriptions.create "RoomChannel",
-  connected: ->
-    # Called when the subscription is ready for use on the server
+jQuery(document).on 'turbolinks:load', ->
+  messages = $('#messages')
 
-  disconnected: ->
-    # Called when the subscription has been terminated by the server
+  if $('#messages').length > 0
 
-  received: (data) ->
-    $('#messages').append data['message']
+    App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id'), user_id: $('#messages').data('user_id'), company_id: $('#messages').data('company_id')},
+     connected: ->
+       # Called when the subscription is ready for use on the server
 
-  speak: (message) ->
-    @perform 'speak', message: message
+     disconnected: ->
+       # Called when the subscription has been terminated by the server
 
-jQuery(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-  if event.keyCode is 13 # return キーのキーコードが13
-    App.room.speak event.target.value # speak メソッド, event.target.valueを引数に.
-    event.target.value = ''
-    event.preventDefault()
+     received: (data) ->
+       $('#messages').append data['message']
+
+     speak: (message, user_id, room_id, company_id) ->
+        @perform 'speak', message: message, room_id: $('#messages').data('room_id'), user_id: $('#messages').data('user_id'), company_id: $('#messages').data('company_id')
+
+$(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
+  if event.keyCode is 13
+     App.room.speak event.target.value
+     event.target.value = ''
+     event.preventDefault()

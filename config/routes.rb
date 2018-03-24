@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'rooms/show'
+
 
   get 'companies/index'
 
@@ -39,4 +39,6 @@ Rails.application.routes.draw do
  resources 'topic_comments', :only => [:new, :create, :destroy]
  resources 'profile_comments', :only => [:new, :create, :destroy]
 
+ resources 'rooms'
+ 
 end

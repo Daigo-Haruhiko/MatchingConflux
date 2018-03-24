@@ -70,6 +70,12 @@
           <%= link_to new_topic_comment_path(topic_id: topic.id) do %>
            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
           <% end %>
+
+          <% if company_signed_in? %>
+          <%= link_to rooms_path(user_id: topic.user_id, company_id: current_company.id), method: :post do %>
+           トーク
+           <% end %>
+           <% end %>
         </p>
 
           <h3 class="topic-title">
