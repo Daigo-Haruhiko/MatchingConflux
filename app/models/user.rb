@@ -18,4 +18,7 @@ class User < ApplicationRecord
 
   has_many :topic_comments
   has_many :profile_comments
+
+  has_many :rooms
+  has_many :messages
 end
