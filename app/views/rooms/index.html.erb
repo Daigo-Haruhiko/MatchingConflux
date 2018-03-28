@@ -1,0 +1,13 @@
+<div class="room-index">
+  <div class="room-index-single">
+  <h1 class="text-center text-white">トークルーム　一覧</p>
+    <br>
+    <% @rooms.each do |room| %>
+    <% if user_signed_in? %>
+    <h2 class="text-white text-center"><%= link_to room.company.name, room_path(room.id), class: "btn btn-success" if current_user.id == room.user_id %></h2>
+    <% elsif company_signed_in? %>
+      <h2 class="text-center text-white"><%= link_to room.user.name, room_path(room.id), class: "btn btn-success" if current_company.id == room.company_id %></h2>
+    <% end %>
+    <% end %>
+  </div>
+<div>

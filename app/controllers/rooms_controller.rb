@@ -19,6 +19,10 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])
       @company = Company.find(current_company.id)
       @messages = @room.messages
-    end 
+    end
   end
+
+  def index
+    @rooms = Room.all
+  end 
 end
