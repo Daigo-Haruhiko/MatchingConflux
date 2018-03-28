@@ -1,3 +1,11 @@
 <div class="message">
-  <p><%= "#{message.content}" %></p>
+  <div class="chat-box">
+    <div class="chat-area">
+      <div class="chat-hukidashi">
+        <p><%= "#{message.user.name if message.user_id.present? }" %></p>
+        <p><%= "#{message.company.name if message.company_id.present? }" %></p>
+        <p><%= "#{message.content}" %></p>
+      </div>
+    </div>
+  </div>
 </div>

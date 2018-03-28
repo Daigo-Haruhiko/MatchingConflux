@@ -1,20 +1,43 @@
-<h1>Chat Room</h1>
-<% if user_signed_in? %>
-<div id="messages", data-room_id="<%= @room.id %>", data-user_id="<%= @user.id %>">
-  <%= render @messages %>
+<div class="room-wrapper">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="room-single">
+      <h1 class="text-center text-white">Chat Room</h1>
+      <% if user_signed_in? %>
+      <div id="messages", data-room_id="<%= @room.id %>", data-user_id="<%= @user.id %>">
+        <%= render @messages %>
+      </div>
+      <div class="chat-box">
+        <div class="chat-area">
+          <div class="chat-hukidashi">
+      <form>
+        <label>Say Something:</label><br>
+        <%= current_user.name %><br>
+        <input type="text" data-behavior='room_speaker'>
+      </form>
+    </div>
+  </div>
 </div>
-<form>
-  <label>Say Something:</label><br>
-  <%= current_user.name %><br>
-<input type="text" data-behavior='room_speaker'>
-</form>
-<% elsif %>
-<div id="messages", data-room_id="<%= @room.id %>", data-company_id="<%= @company.id %>">
-  <%= render @messages %>
+
+      <% elsif %>
+      <div id="messages", data-room_id="<%= @room.id %>", data-company_id="<%= @company.id %>">
+        <%= render @messages %>
+      </div>
+      <div class="chat-box">
+        <div class="chat-area">
+          <div class="chat-hukidashi">
+      <form>
+        <label>Say Something:</label><br>
+        <%= current_company.name %><br>
+        <input type="text" data-behavior='room_speaker'>
+      </form>
+    </div>
+  </div>
 </div>
-<form>
-  <label>Say Something:</label><br>
-  <%= current_company.name %><br>
-<input type="text" data-behavior='room_speaker'>
-</form>
-<% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+</div>

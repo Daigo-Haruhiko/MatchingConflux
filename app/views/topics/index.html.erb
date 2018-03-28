@@ -73,7 +73,7 @@
 
           <% if company_signed_in? %>
           <%= link_to rooms_path(user_id: topic.user_id, company_id: current_company.id), method: :post do %>
-           トーク
+          <%= image_tag 'icons/bubble.png', class: 'topic-index-icon' %>
            <% end %>
            <% end %>
         </p>

@@ -404,32 +404,38 @@ h1, h2, h3 {
 }
 .anime1 {
   position: absolute;
-	left: 25%;	/*左から33%の場所に配置*/
-	top: 30%;	/*上から4%の場所に配置*/
+	left: 20%;	/*左から33%の場所に配置*/
+	top: 20%;	/*上から4%の場所に配置*/
 }
 .anime2 {
   position: absolute;
-	left: 30%;	/*左から8%の場所に配置*/
-	top: 56%;	/*上から35%の場所に配置*/
+	left: 25%;	/*左から8%の場所に配置*/
+	top: 45%;	/*上から35%の場所に配置*/
 	animation-delay: 0.2s;	/*0.2秒だけ遅れてアニメーションをスタートさせる設定*/
 }
 .anime3{
   position: absolute;
-	left: 45%;	/*左から36%の場所に配置*/
-	bottom: 8%;	/*下から8%の場所に配置*/
+	left: 37%;	/*左から36%の場所に配置*/
+	bottom: 16%;	/*下から8%の場所に配置*/
 	animation-delay: 0.4s;	/*0.4秒だけ遅れてアニメーションをスタートさせる設定*/
 }
 .anime4 {
   position: absolute;
-	right: 30%;		/*右から8%の場所に配置*/
-	top: 56%;	/*下から27%の場所に配置*/
+	right: 37%;		/*右から8%の場所に配置*/
+	bottom: 16%;	/*下から27%の場所に配置*/
 	animation-delay: 0.6s;	/*0.6秒だけ遅れてアニメーションをスタートさせる設定*/
 }
 .anime5{
   position: absolute;
 	right: 25%;	/*右から15%の場所に配置*/
-	top: 30%;	/*上から18%の場所に配置*/
+	top: 45%;	/*上から18%の場所に配置*/
 	animation-delay: 0.8s;	/*0.8秒だけ遅れてアニメーションをスタートさせる設定*/
+}
+.anime6{
+  position: absolute;
+	right: 20%;	/*右から15%の場所に配置*/
+	top: 20%;	/*上から18%の場所に配置*/
+	animation-delay: 1.0s;	/*0.8秒だけ遅れてアニメーションをスタートさせる設定*/
 }
 .image-circle {
   border-radius: 50%;
@@ -609,3 +615,82 @@ h1, h2, h3 {
   background: #FA5858;
   color: #fff;
 }
+.chat-box {
+    width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除*/
+    margin-bottom: 20px;
+}
+.chat-area {
+    width: 100%;
+    float: right;
+}
+.chat-hukidashi {
+    display: inline-block; /*コメントの文字数に合わせて可変*/
+    padding: 15px 20px;
+    margin-left: 120px;
+    margin-top: 8px;
+    /* border: 1px solid gray; ←削除 */
+    border-radius: 10px;
+    position: relative; /*追記*/
+    background-color: #D9F0FF; /*追記*/
+}
+/* ↓追記↓ */
+.chat-hukidashi:after {
+    content: "";
+    position: absolute;
+    top: 50%; left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #D9F0FF transparent transparent;
+}
+.room-wrapper {
+  background-image: url("room.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+ margin-top: 23px;
+  .room-single {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding: 0.5em 0.7em;
+    margin: 2em 0;
+    background-color: rgba(0,0,0,0.3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #5c98d4;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    border: 1px solid #e6ecf0;
+  }
+}
+.room-index {
+  background-image: url("room-index.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+ margin-top: 23px;
+ .room-index-single {
+   position: relative;
+   height: auto;
+   min-height: 100vh;
+   padding: 0.5em 0.7em;
+   background-color: rgba(0,0,0,0.3);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   color: #5c98d4;
+   font-weight: bold;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   border: 1px solid #e6ecf0;
+ }
+ }
