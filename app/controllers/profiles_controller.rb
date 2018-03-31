@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @profiles = Profile.all.includes(:profile_favorite_companies)
+    @profiles = Profile.all.includes(:profile_favorite_companies, :profile_favorite_users)
   end
 
   def edit
