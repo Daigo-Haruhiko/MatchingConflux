@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topics = Topic.all.includes(:topic_favorite_users)
+    @topics = Topic.all.includes(:topic_favorite_users, :topic_favorite_companies)
   end
 
   def edit
