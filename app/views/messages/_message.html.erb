@@ -1,19 +1,11 @@
 <div class="message">
   <div class="chat-box">
     <div class="chat-area">
-      <% if user_signed_in? %>
-      <div class="chat-hukidashi <%= 'user_post' if current_user.id == message.user_id %>">
+      <div class="chat-hukidashi">
         <p><%= "#{message.user.name if message.user_id.present? }" %></p>
         <p><%= "#{message.company.name if message.company_id.present? }" %></p>
         <p><%= "#{message.content}" %></p>
       </div>
-      <% elsif company_signed_in? %>
-      <div class="chat-hukidashi <%= 'company_post' if current_company.id == message.company_id %>">
-        <p><%= "#{message.user.name if message.user_id.present? }" %></p>
-        <p><%= "#{message.company.name if message.company_id.present? }" %></p>
-        <p><%= "#{message.content}" %></p>
-      </div>
-      <% end %>
     </div>
   </div>
 </div>
