@@ -11,9 +11,9 @@ class Topic < ApplicationRecord
 
   belongs_to :user
   belongs_to :company, optional: true
-  has_many :topic_favorites, dependent: :destroy, validate: :false
+  has_many :topic_favorites, dependent: => :destroy, validate: :false
   has_many :topic_favorite_users, through: :topic_favorites, source: 'user'
   has_many :topic_favorite_companies, through: :topic_favorites, source: 'company'
 
-  has_many :topic_comments
+  has_many :topic_comments, dependent: => :destroy
 end

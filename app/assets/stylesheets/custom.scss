@@ -636,18 +636,18 @@ h1, h2, h3 {
     background-color: #D9F0FF; /*追記*/
 }
 /* ↓追記↓ */
-.chat-hukidashi:after {
-    content: "";
-    position: absolute;
-    top: 50%; left: -10px;
-    margin-top: -10px;
-    display: block;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #D9F0FF transparent transparent;
-}
+// .chat-hukidashi:after {
+//     content: "";
+//     position: absolute;
+//     top: 50%; left: -10px;
+//     margin-top: -10px;
+//     display: block;
+//     width: 0px;
+//     height: 0px;
+//     border-style: solid;
+//     border-width: 10px 10px 10px 0;
+//     border-color: transparent #D9F0FF transparent transparent;
+// }
 .room-wrapper {
   background-image: url("room.jpg");
   background-repeat: no-repeat;
@@ -694,3 +694,15 @@ h1, h2, h3 {
    border: 1px solid #e6ecf0;
  }
  }
+.user_post {
+  float: right;
+  margin-right: 120px;
+  background-color: #ccffcc;
+  color: #00cc33;
+}
+.company_post {
+  float: right;
+  margin-right: 120px;
+  background-color: #ccffcc;
+  color: #00cc33;
+}
